@@ -6,14 +6,14 @@
 *
 * Return: Integer
 */
-void hsh_execute(char **args)
+void hsh_execute(char **args, char **env)
 {
 	pid_t child_pid;
 
 	child_pid = fork();
 	if (child_pid == 0)
 	{
-		execve(args[0], args, NULL);
+		execve(args[0], args, env);
 		perror("./hsh");
 		exit(1);
 	} else if (child_pid > 0)

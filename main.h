@@ -11,8 +11,8 @@
 
 void _puts(char *str);
 int _strcmp(char *s1, char *s2);
-void hsh_execute(char **args);
-int hsh_launch(char **args);
+void hsh_execute(char **args, char **env);
+int hsh_launch(char **args, char **env);
 int _putchar(int c);
 void hsh_shell(void);
 char **hsh_split_line(char *line);

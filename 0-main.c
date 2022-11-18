@@ -7,7 +7,7 @@
  *
  * Return: Always EXIT_SUCCESS.
  */
-int main(int ac, char **args)
+int main(int ac, char **args, char **env)
 {
 	char *line;
 
@@ -22,7 +22,7 @@ int main(int ac, char **args)
 			args = hsh_split_line(line);
 		if (args[0] != NULL)
 		{
-			hsh_execute(args);
+			hsh_execute(args, env);
 			free(line);
 			free(args);
 		}
